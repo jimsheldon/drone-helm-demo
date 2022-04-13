@@ -1,0 +1,23 @@
+image:
+  tag: 2.11.1
+
+env:
+  ## REQUIRED: Set the user-visible Drone hostname, sans protocol.
+  ## Ref: https://docs.drone.io/installation/reference/drone-server-host/
+  ##
+  DRONE_SERVER_HOST: 13.58.177.61
+  ## The protocol to pair with the value in DRONE_SERVER_HOST (http or https).
+  ## Ref: https://docs.drone.io/installation/reference/drone-server-proto/
+  ##
+  DRONE_SERVER_PROTO: http
+  ## REQUIRED: Set the secret secret token that the Drone server and its Runners will use
+  ## to authenticate. This is commented out in order to leave you the ability to set the
+  ## key via a separately provisioned secret (see existingSecretName above).
+  ## Ref: https://docs.drone.io/installation/reference/drone-rpc-secret/
+  ##
+  DRONE_RPC_SECRET: <+secrets.getValue("drone_rpc_secret")>
+  ## GitHub provider configuration.
+  ## Ref: https://docs.drone.io/installation/providers/github/
+  DRONE_GITHUB_CLIENT_ID: f00817724a19abb1d9e9
+  DRONE_GITHUB_CLIENT_SECRET: <+secrets.getValue("drone_github_client_secret")>
+  DRONE_LOGS_DEBUG: true
