@@ -21,3 +21,6 @@ env:
   DRONE_GITHUB_CLIENT_ID: f00817724a19abb1d9e9
   DRONE_GITHUB_CLIENT_SECRET: <+secrets.getValue("drone_github_client_secret")>
   DRONE_LOGS_DEBUG: true
+
+ingress:
+  enabled: true
